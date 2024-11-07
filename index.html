@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Render JSON as HTML Table</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Render JSON Data as HTML Table</h1>
+  
+  <!-- This is where the table will be injected -->
+  <div id="table-container"></div>
+  
+  <script type="module">
+    // Import the json2html function
+    import json2html from './json2html.js'; 
+
+    // Sample data
+    const data = [
+      { Name: "Alice", Age: 25 },
+      { Name: "Bob", Age: 30 },
+      { Name: "Charlie", Age: 35, Gender: "M" }
+    ];
+
+    // Generate HTML table from the data
+    const htmlTable = json2html(data);
+
+    // Insert the table into the DOM
+    document.getElementById('table-container').innerHTML = htmlTable;
+  </script>
+</body>
+</html>
